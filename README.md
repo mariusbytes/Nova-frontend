@@ -1,21 +1,28 @@
 # Landing Page Project
 
-My first front-end project built using only HTML and CSS.
+My first front-end project built using only HTML and CSS.  
+This project focuses on learning layout, Flexbox, and basic UI structure.
 
 ## Features
+
 - Hero section
 - Features section
 - Pricing cards
 - Contact form
-- Sectioned footer (mostly empty links)
+- Multi-column footer (currently placeholder links)
 
 ## Technologies
+
 - HTML5
 - CSS3 (Flexbox)
 
-- ## Future plans
-- Responsive layour for mobile devices
-- Polishing things here and there
-- Add gradients, shadows, better the design
-- Add more secitons and media
-- Add more content for the footer links
+## Future Plans
+
+- Make the layout responsive for mobile devices
+- Improve the visual design (gradients, shadows, spacing)
+- Add more sections and media
+- Expand footer links and content
+
+## Author
+
+Andries Marius
