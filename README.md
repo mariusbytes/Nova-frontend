@@ -9,6 +9,7 @@ This project focuses on learning layout, Flexbox, and basic UI structure.
 - Features section
 - Pricing cards
 - Contact form
+- Responvive layout for mobile devices
 - Multi-column footer (currently placeholder links)
 
 ## Technologies
@@ -18,7 +19,6 @@ This project focuses on learning layout, Flexbox, and basic UI structure.
 
 ## Future Plans
 
-- Make the layout responsive for mobile devices
 - Improve the visual design (gradients, shadows, spacing)
 - Add more sections and media
 - Expand footer links and content
