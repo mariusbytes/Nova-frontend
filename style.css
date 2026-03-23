@@ -6,6 +6,7 @@
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -93,6 +94,8 @@ nav {
 nav a {
   font-size: 16px;
   color: #9ca3af;
+  transition: color 0.3s ease;
+  position: relative;
 }
 
 nav a:hover {
@@ -104,21 +107,29 @@ nav a:hover {
 .hero-section {
   padding-top: 120px;
   padding-bottom: 100px;
+  background: linear-gradient(
+    135deg,
+    rgba(79, 70, 229, 0.05) 0%,
+    rgba(79, 70, 229, 0) 100%
+  );
 }
 
 .container.hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .hero-left h1 {
   font-size: 60px;
-  line-height: 1.1;
+  line-height: 1.2;
+  font-weight: 700;
 }
 
 .hero-right p {
   font-size: 20px;
+  line-height: 1.6;
 }
 
 .hero-bottom {
@@ -147,35 +158,40 @@ nav a:hover {
   color: white;
   border: 2px transparent;
   border-radius: 8px;
-  padding: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  transition: ease-in 0.2s;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(79, 70, 229, 0.3);
 }
 
 .primary-btn:hover {
   background-color: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px rgba(79, 70, 229, 0.4);
 }
 
 .primary-btn:active {
   background-color: #3730a3;
+  transform: translateY(0);
 }
 
 .secondary-btn {
   background-color: transparent;
-  border: #4f46e5 2px solid;
+  border: 2px #4f46e5 solid;
   color: #4f46e5;
   border-radius: 8px;
-  padding: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  transition: ease-in 0.2s;
+  padding: 10px 22px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .secondary-btn:hover {
   background-color: #4f46e514;
   color: #4338ca;
-  border: #4338ca 2px solid;
+  border: 2px #4338ca solid;
+  transform: translateY(-2px);
 }
 
 /*feature-section*/
@@ -186,17 +202,22 @@ nav a:hover {
   background-color: #273449;
 }
 
-.feature-section p {
+.feature-section h2 {
+  font-size: clamp(32px, 5vw, 42px);
+  margin-bottom: 16px;
+}
+
+.feature-section > .container > p {
   padding-bottom: 40px;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 600px;
 }
 
 .feature-icon {
   color: #818cf8;
   padding-bottom: 24px;
-}
-
-.feature-section h2 {
-  color: #f1f5f9;
+  font-size: 32px;
 }
 
 .feature-list {
@@ -221,6 +242,14 @@ nav a:hover {
   min-width: 0;
   padding: 24px;
   border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.feature-list article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  border-color: #4f46e5;
 }
 
 /*why chose us section*/
@@ -229,6 +258,16 @@ nav a:hover {
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: #111827;
+}
+
+.wcu-heading h2 {
+  font-size: clamp(32px, 5vw, 42px);
+  margin-bottom: 12px;
+}
+
+.wcu-heading p {
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .wcu-heading {
@@ -250,6 +289,13 @@ nav a:hover {
   background-color: #1f2937;
   flex: 1 1 calc(50% - 12px);
   min-width: 0;
+  transition: all 0.3s ease;
+}
+
+.wcu-card:hover {
+  border-color: #4f46e5;
+  box-shadow: 0 8px 16px rgba(79, 70, 229, 0.15);
+  transform: translateY(-2px);
 }
 
 /*pricing-section*/
@@ -260,6 +306,17 @@ nav a:hover {
   display: flex;
   align-items: stretch;
   background-color: #273449;
+}
+
+.pricing-header h2 {
+  font-size: clamp(32px, 5vw, 42px);
+  margin-bottom: 12px;
+}
+
+.pricing-header p {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 600px;
 }
 
 .pricing-header {
@@ -280,6 +337,12 @@ nav a:hover {
   justify-content: space-between;
   flex: 1;
   min-width: 0;
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(79, 70, 229, 0.25);
 }
 
 .pricing-card h3 {
@@ -316,17 +379,23 @@ nav a:hover {
 
 /*contact form*/
 
-form p {
-  color: #9ca3af;
-  font-size: 18px;
-  color: #f9fafb;
-  margin-top: 12px;
-  margin-bottom: 8px;
-}
-
 .contact {
   padding-top: 60px;
   padding-bottom: 60px;
+  background-color: #111827;
+}
+
+.contact h2 {
+  font-size: clamp(32px, 5vw, 42px);
+  margin-bottom: 16px;
+}
+
+form p {
+  color: #f9fafb;
+  font-size: 16px;
+  color: #f9fafb;
+  margin-top: 12px;
+  margin-bottom: 8px;
 }
 
 .contact-layout {
@@ -361,29 +430,39 @@ form {
   background-color: #1f2937;
   border: 1px solid #374151;
   border-radius: 12px;
-  padding: 12px;
+  padding: 32px;
   color: #9ca3af;
   display: flex;
   flex-direction: column;
-  border-top: 8px;
   width: min(100%, 680px);
+  transition: all 0.3s ease;
+}
+
+form:hover {
+  border-color: #4f46e5;
+  box-shadow: 0 8px 16px rgba(79, 70, 229, 0.1);
 }
 
 label {
-  margin-top: 12px;
+  margin-top: 16px;
+  font-weight: 500;
+  color: #e5e7eb;
 }
 
 input {
   background-color: #111827;
   border: 1px solid #374151;
   color: #f9fafb;
-  padding: 8px;
-  border-radius: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 input:focus {
   outline: none;
-  border: 1px solid #4338ca;
+  border: 1px solid #4f46e5;
+  background-color: #1f2937;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
 
 .radio-input {
@@ -404,31 +483,46 @@ input:focus {
 form button {
   background-color: #4f46e5;
   border: 1px solid transparent;
-  border-radius: 12px;
-  padding: 14px 24px;
+  border-radius: 8px;
+  padding: 12px 24px;
   margin-top: 24px;
   color: white;
   display: block;
   width: 100%;
   outline: none;
   font-size: 16px;
-  transition: ease 0.2s;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 select {
-  padding: 8px;
-  border-radius: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
   background-color: #111827;
   border: 1px solid #374151;
   color: #f9fafb;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+select:focus {
+  outline: none;
+  border: 1px solid #4f46e5;
+  background-color: #1f2937;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
 
 .button-form button:hover {
   background-color: #4338ca;
+  box-shadow: 0 8px 12px rgba(79, 70, 229, 0.3);
+  transform: translateY(-2px);
 }
 
 .button-form button:active {
   background-color: #3730a3;
+  transform: translateY(0);
 }
 
 .button-form button:focus {
@@ -465,6 +559,7 @@ footer {
 
 footer a {
   color: #9ca3af;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
@@ -486,18 +581,21 @@ footer a:hover {
   color: white;
   border: 2px transparent;
   border-radius: 8px;
-  padding: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  transition: ease-in 0.2s;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .footer-cta:hover {
   background-color: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(79, 70, 229, 0.3);
 }
 
 .footer-cta:active {
   background-color: #3730a3;
+  transform: translateY(0);
 }
 
 .footer-links {
@@ -562,6 +660,7 @@ footer a:hover {
   }
 
   nav {
+    width: 100%;
     flex-wrap: wrap;
     gap: 16px 24px;
   }
@@ -588,6 +687,14 @@ footer a:hover {
   .footer-links {
     gap: 32px 48px;
   }
+
+  .contact-layout {
+    gap: 24px;
+  }
+
+  form {
+    width: 100%;
+  }
 }
 
 @media (max-width: 640px) {
@@ -602,24 +709,36 @@ footer a:hover {
   }
 
   .logo {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .logo svg {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
   }
 
   nav {
     width: 100%;
+    gap: 12px 20px;
+    margin-top: 12px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  .hero-section {
+    padding-top: 60px;
+    padding-bottom: 48px;
   }
 
   .hero-left h1 {
-    font-size: clamp(32px, 11vw, 44px);
+    font-size: clamp(28px, 10vw, 40px);
   }
 
   .hero-right p {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   .hero-right p br,
@@ -633,16 +752,30 @@ footer a:hover {
     width: 100%;
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
+    margin-top: 24px;
   }
 
-  .hero-actions a,
-  .pricing-card a,
-  .footer-cta {
+  .hero-actions a {
     text-align: center;
+    padding: 12px 16px;
+    font-size: 15px;
   }
 
   .hero-bottom {
-    margin-top: 72px;
+    margin-top: 60px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-bottom p {
+    font-size: 14px;
+  }
+
+  .hero-bottom svg {
+    height: 28px;
+    width: auto;
+    display: block;
   }
 
   .feature-section,
@@ -653,20 +786,162 @@ footer a:hover {
     padding-bottom: 48px;
   }
 
+  .feature-section h2 {
+    font-size: 28px;
+  }
+
+  .feature-section p {
+    font-size: 14px;
+  }
+
+  .feature-icon {
+    font-size: 32px;
+  }
+
   .pricing-card {
-    padding: 24px;
+    padding: 20px;
+  }
+
+  .pricing-card h3 {
+    font-size: 20px;
+  }
+
+  .pricing-card a {
+    text-align: center;
+    margin-top: 16px;
   }
 
   form {
     padding: 20px;
   }
 
+  form label {
+    font-size: 14px;
+  }
+
+  form p {
+    font-size: 14px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  form button {
+    padding: 12px 16px;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+
+  .button-form p {
+    font-size: 11px;
+  }
+
   .left-section svg {
     width: 100%;
+    max-width: 300px;
   }
 
   .footer-links {
     width: 100%;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-col {
+    margin-bottom: 8px;
+  }
+
+  .footer-col a {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
     gap: 24px;
+    padding: 24px 0;
+  }
+
+  .footer-left,
+  .footer-right {
+    width: 100%;
+  }
+
+  .footer-left p,
+  .footer-right p {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .social-icons ul {
+    gap: 12px;
+  }
+
+  .social-icons svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-left h1 {
+    font-size: clamp(24px, 8vw, 32px);
+  }
+
+  .hero-right p {
+    font-size: 14px;
+  }
+
+  .hero-actions a {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .feature-list {
+    gap: 16px;
+  }
+
+  .wcu-grid {
+    gap: 16px;
+  }
+
+  .wcu-card {
+    flex-basis: 100%;
+  }
+
+  .pricing-list {
+    gap: 16px;
+  }
+
+  form {
+    padding: 16px;
+  }
+
+  form button {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  label {
+    margin-top: 10px;
+  }
+
+  select,
+  input {
+    padding: 8px;
+    font-size: 15px;
+  }
+
+  .footer-col a {
+    font-size: 13px;
   }
 }
